@@ -3,94 +3,76 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KRB | Developer</title>
+<title>KRB Tech</title>
 
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, Helvetica, sans-serif;
+:root{
+  --bg1:#05060a;
+  --bg2:#12061a;
+  --accent:#00fff0;
+  --accent2:#9b59ff;
 }
 
 body{
-background:#0f172a;
-color:white;
-line-height:1.6;
+  margin:0;
+  font-family:Segoe UI;
+  background:linear-gradient(135deg,var(--bg1),var(--bg2));
+  color:white;
 }
 
-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 10%;
-background:#020617;
-position:sticky;
-top:0;
+.container{
+  width:90%;
+  max-width:1100px;
+  margin:auto;
 }
 
-header h1{
-color:#38bdf8;
+h1{color:var(--accent);}
+
+.card{
+  background:rgba(255,255,255,0.03);
+  padding:15px;
+  border-radius:12px;
+  margin:10px 0;
+  box-shadow:0 5px 20px rgba(0,0,0,0.5);
 }
 
-nav a{
-color:white;
-margin-left:20px;
-text-decoration:none;
-}
-
-nav a:hover{
-color:#38bdf8;
-}
-
-.hero{
-height:90vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-}
-
-.hero h2{
-font-size:40px;
-}
-
-.hero span{
-color:#38bdf8;
+.badge{
+  display:inline-block;
+  padding:6px 10px;
+  background:rgba(0,255,240,0.1);
+  border-radius:20px;
+  margin:5px;
 }
 
 .btn{
-margin-top:20px;
-padding:10px 20px;
-background:#38bdf8;
-border:none;
-cursor:pointer;
-color:black;
-font-weight:bold;
+  display:inline-block;
+  padding:10px 14px;
+  background:linear-gradient(90deg,#00fff0,#9b59ff);
+  color:black;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:bold;
 }
 
-section{
-padding:80px 10%;
+.progress{
+  background:#222;
+  border-radius:20px;
+  overflow:hidden;
 }
 
-.projects{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+.progress div{
+  height:10px;
+  background:linear-gradient(90deg,#00fff0,#9b59ff);
 }
 
-.card{
-background:#020617;
-padding:20px;
-border-radius:10px;
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
 }
 
-footer{
-text-align:center;
-padding:20px;
-background:#020617;
+@media(max-width:768px){
+  .grid{grid-template-columns:1fr;}
 }
 
 </style>
@@ -98,71 +80,96 @@ background:#020617;
 
 <body>
 
-<header>
-<h1>KRB</h1>
-<nav>
-<a href="#about">About</a>
-<a href="#projects">Projects</a>
-<a href="#contact">Contact</a>
-</nav>
-</header>
+<div class="container">
 
-<section class="hero">
-<h2>Hi, I'm <span>Krishna</span></h2>
-<p>CSE Student | Future Entrepreneur | Tech Builder</p>
-<button class="btn" onclick="scrollToProjects()">View Projects</button>
-</section>
+<!-- HEADER -->
+<h1>Krishna Lal</h1>
+<p>ML | Embedded | Hackathon Winner</p>
 
-<section id="about">
-<h2>About Me</h2>
-<p>
-I am a Computer Science student passionate about building technology.
-Currently learning DSA, Machine Learning and exploring future tech like Quantum Computing.
-</p>
-</section>
+<div class="card">
+  <span class="badge">Open to Internships</span>
+  <span class="badge">Freelance ML</span>
+  <p>📍 Asansol, India</p>
+  <p>📧 krilal324@gmail.com</p>
+</div>
 
-<section id="projects">
+<!-- STATS -->
+<div class="grid">
+  <div class="card">SGPA: 8.88</div>
+  <div class="card">Semester: 3rd</div>
+</div>
+
+<!-- SKILLS -->
+<h2>Skills</h2>
+
+<div class="card">
+Python
+<div class="progress"><div style="width:95%"></div></div>
+
+DSA
+<div class="progress"><div style="width:80%"></div></div>
+
+ML
+<div class="progress"><div style="width:80%"></div></div>
+
+Embedded
+<div class="progress"><div style="width:70%"></div></div>
+</div>
+
+<!-- PROJECTS -->
 <h2>Projects</h2>
 
-<div class="projects">
-
 <div class="card">
-<h3>Self Healing CI/CD</h3>
-<p>AI powered deployment system that auto detects and fixes errors.</p>
-</div>
-
-<div class="card">
-<h3>CV Analyzer</h3>
-<p>Machine learning based resume analyzer.</p>
+<h3>Fintrax</h3>
+<p>Expense tracking system using Python</p>
+<a href="#" class="btn">View</a>
 </div>
 
 <div class="card">
-<h3>IoT Sensor System</h3>
-<p>Project using Raspberry Pi and sensors.</p>
+<h3>LacoPred</h3>
+<p>Land price prediction using ML</p>
+<a href="#" class="btn">View</a>
 </div>
 
+<!-- ACHIEVEMENTS -->
+<h2>Achievements</h2>
+
+<div class="card">
+<p>🏆 1st InnovateX Hackathon</p>
+<p>🥉 ISTE Ideathon</p>
 </div>
 
-</section>
-
-<section id="contact">
+<!-- CONTACT -->
 <h2>Contact</h2>
-<p>Email: clashingkrishna007@email.com</p>
-<p>GitHub: github.com/krish033-source</p>
-</section>
 
-<footer>
-<p>© 2026 Krishna Lal</p>
-</footer>
+<div class="card">
+<a href="#" class="btn">GitHub</a>
+<a href="#" class="btn">LinkedIn</a>
+</div>
+
+<!-- RESUME BUTTON -->
+<div class="card">
+<button class="btn" onclick="downloadResume()">Download Resume</button>
+</div>
+
+</div>
 
 <script>
+function downloadResume(){
+  const text = `
+Krishna Lal
+ML Engineer
 
-function scrollToProjects(){
-document.getElementById("projects").scrollIntoView({
-behavior:"smooth"
-});
+Skills: Python, ML, DSA
+Projects: Fintrax, LacoPred
+  `;
+
+  const blob = new Blob([text], {type: "text/plain"});
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "resume.txt";
+  a.click();
 }
-
 </script>
 
 </body>
