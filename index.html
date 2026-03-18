@@ -5,170 +5,236 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KRB Tech</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
 <style>
-:root{
-  --bg1:#05060a;
-  --bg2:#12061a;
-  --accent:#00fff0;
-  --accent2:#9b59ff;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins;}
 
 body{
-  margin:0;
-  font-family:Segoe UI;
-  background:linear-gradient(135deg,var(--bg1),var(--bg2));
-  color:white;
+  background:#0a0a0f;
+  color:#fff;
+  scroll-behavior:smooth;
 }
 
-.container{
-  width:90%;
-  max-width:1100px;
-  margin:auto;
+/* NAVBAR */
+nav{
+  position:fixed;
+  width:100%;
+  top:0;
+  background:rgba(0,0,0,0.6);
+  backdrop-filter:blur(10px);
+  padding:15px 50px;
+  display:flex;
+  justify-content:space-between;
+  z-index:100;
 }
 
-h1{color:var(--accent);}
+nav a{
+  color:#00fff0;
+  text-decoration:none;
+  margin:0 10px;
+}
+
+/* HERO */
+.hero{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+
+.hero h1{
+  font-size:3rem;
+  color:#00fff0;
+}
+
+.typing{
+  color:#9b59ff;
+  font-size:1.3rem;
+  margin-top:10px;
+}
+
+/* SECTION */
+section{
+  padding:80px 10%;
+}
 
 .card{
-  background:rgba(255,255,255,0.03);
-  padding:15px;
-  border-radius:12px;
+  background:rgba(255,255,255,0.05);
+  border-radius:15px;
+  padding:20px;
   margin:10px 0;
-  box-shadow:0 5px 20px rgba(0,0,0,0.5);
+  backdrop-filter:blur(10px);
+  transition:0.3s;
 }
 
-.badge{
-  display:inline-block;
-  padding:6px 10px;
-  background:rgba(0,255,240,0.1);
-  border-radius:20px;
-  margin:5px;
+.card:hover{
+  transform:translateY(-5px);
 }
 
-.btn{
-  display:inline-block;
-  padding:10px 14px;
-  background:linear-gradient(90deg,#00fff0,#9b59ff);
-  color:black;
-  border-radius:8px;
-  text-decoration:none;
-  font-weight:bold;
-}
-
-.progress{
+/* SKILLS */
+.bar{
   background:#222;
   border-radius:20px;
   overflow:hidden;
 }
 
-.progress div{
-  height:10px;
+.bar div{
+  height:8px;
   background:linear-gradient(90deg,#00fff0,#9b59ff);
 }
 
+/* PROJECT GRID */
 .grid{
   display:grid;
-  grid-template-columns:1fr 1fr;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
   gap:15px;
 }
 
-@media(max-width:768px){
-  .grid{grid-template-columns:1fr;}
+/* BUTTON */
+.btn{
+  display:inline-block;
+  padding:10px 15px;
+  background:linear-gradient(90deg,#00fff0,#9b59ff);
+  color:black;
+  border-radius:8px;
+  text-decoration:none;
+  margin-top:10px;
 }
 
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:20px;
+  color:#aaa;
+}
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<!-- NAV -->
+<nav>
+<div>KRB Tech</div>
+<div>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
 
-<!-- HEADER -->
+<!-- HERO -->
+<div class="hero">
 <h1>Krishna Lal</h1>
-<p>ML | Embedded | Hackathon Winner</p>
+<div class="typing" id="typing"></div>
+</div>
 
+<!-- ABOUT -->
+<section id="about">
+<h2>About</h2>
 <div class="card">
-  <span class="badge">Open to Internships</span>
-  <span class="badge">Freelance ML</span>
-  <p>📍 Asansol, India</p>
-  <p>📧 krilal324@gmail.com</p>
+I build ML tools, embedded systems and fast prototypes.
+Focused on solving real-world problems with scalable solutions.
 </div>
-
-<!-- STATS -->
-<div class="grid">
-  <div class="card">SGPA: 8.88</div>
-  <div class="card">Semester: 3rd</div>
-</div>
+</section>
 
 <!-- SKILLS -->
+<section id="skills">
 <h2>Skills</h2>
 
 <div class="card">
 Python
-<div class="progress"><div style="width:95%"></div></div>
-
-DSA
-<div class="progress"><div style="width:80%"></div></div>
+<div class="bar"><div style="width:95%"></div></div>
 
 ML
-<div class="progress"><div style="width:80%"></div></div>
+<div class="bar"><div style="width:80%"></div></div>
+
+DSA
+<div class="bar"><div style="width:80%"></div></div>
 
 Embedded
-<div class="progress"><div style="width:70%"></div></div>
+<div class="bar"><div style="width:70%"></div></div>
+
+Linux
+<div class="bar"><div style="width:75%"></div></div>
 </div>
 
+</section>
+
 <!-- PROJECTS -->
+<section id="projects">
 <h2>Projects</h2>
+
+<div class="grid">
 
 <div class="card">
 <h3>Fintrax</h3>
-<p>Expense tracking system using Python</p>
-<a href="#" class="btn">View</a>
+<p>Expense analytics system using Python & Pandas</p>
+<a href="https://github.com/Krish033-source" class="btn">GitHub</a>
 </div>
 
 <div class="card">
 <h3>LacoPred</h3>
-<p>Land price prediction using ML</p>
-<a href="#" class="btn">View</a>
+<p>Land price prediction ML model</p>
+<a href="https://github.com/Krish033-source" class="btn">GitHub</a>
 </div>
-
-<!-- ACHIEVEMENTS -->
-<h2>Achievements</h2>
 
 <div class="card">
-<p>🏆 1st InnovateX Hackathon</p>
-<p>🥉 ISTE Ideathon</p>
+<h3>CV Analyzer</h3>
+<p>AI resume screening system</p>
+<a href="https://github.com/Krish033-source" class="btn">GitHub</a>
 </div>
 
+</div>
+
+</section>
+
 <!-- CONTACT -->
+<section id="contact">
 <h2>Contact</h2>
 
 <div class="card">
-<a href="#" class="btn">GitHub</a>
-<a href="#" class="btn">LinkedIn</a>
-</div>
-
-<!-- RESUME BUTTON -->
-<div class="card">
+<p>Email: krilal324@gmail.com</p>
+<a href="https://github.com/Krish033-source" class="btn">GitHub</a>
+<a href="https://linkedin.com" class="btn">LinkedIn</a>
+<br><br>
 <button class="btn" onclick="downloadResume()">Download Resume</button>
 </div>
 
-</div>
+</section>
+
+<footer>
+© 2026 Krishna Lal — KRB Tech
+</footer>
 
 <script>
+// typing effect
+const text = ["ML Engineer", "Full Stack Learner", "Problem Solver"];
+let i=0, j=0, current="", isDeleting=false;
+
+function type(){
+  current = text[i];
+  document.getElementById("typing").innerHTML = current.substring(0,j);
+
+  if(!isDeleting && j<current.length){
+    j++;
+  } else if(isDeleting && j>0){
+    j--;
+  }
+
+  if(j==current.length) isDeleting=true;
+  if(j==0){ isDeleting=false; i=(i+1)%text.length;}
+
+  setTimeout(type,100);
+}
+type();
+
+// resume download
 function downloadResume(){
-  const text = `
-Krishna Lal
-ML Engineer
-
-Skills: Python, ML, DSA
-Projects: Fintrax, LacoPred
-  `;
-
-  const blob = new Blob([text], {type: "text/plain"});
-  const a = document.createElement("a");
-  a.href = URL.createObjectURL(blob);
-  a.download = "resume.txt";
-  a.click();
+  window.open("resume.pdf");
 }
 </script>
 
